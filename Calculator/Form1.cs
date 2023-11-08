@@ -11,9 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
         }
@@ -156,6 +156,7 @@ namespace Calculator
             
         }
         #endregion
+        #region Các phím chức năng
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtResult.Text = "0";
@@ -168,22 +169,68 @@ namespace Calculator
             txtResult.Text = "0";
         }
 
-        private void btnPositiveNegative_Click(object sender, EventArgs e)
-        {
-            if (txtResult.Text != "0")
-                result = double.Parse(txtResult.Text) * -1;
-        }
-
         private void btnDecimal_Click(object sender, EventArgs e)
         {
             if(!txtResult.Text.Contains("."))
                 txtResult.Text += ".";
         }
-
+        private void btnPositiveNegative_Click(object sender, EventArgs e)
+        {
+            if (txtResult.Text != "0")
+            {
+                result = double.Parse(txtResult.Text) * -1;
+                txtResult.Text = result.ToString();
+            }
+        }
         private void btnPercentage_Click(object sender, EventArgs e)
         {
             num1 = double.Parse(txtResult.Text) / 100;
             txtResult.Text = num1.ToString();
         }
+
+        private void btnBackSpace_Click(object sender, EventArgs e)
+        {
+            if(txtResult.Text.Length > 0)
+            {
+                txtResult.Text = txtResult.Text.Substring(0, txtResult.Text.Length - 1);
+            }
+            if(txtResult.Text == "")
+                txtResult.Text = "0";
+        }
+
+        private void btnFraction_Click(object sender, EventArgs e)
+        {
+            double res = double.Parse(txtResult.Text);
+            if (txtResult.Text != "0" && res != 0)
+            {
+                txtResult.Text = (1 / res).ToString();
+            }
+            else
+                txtResult.Text = "Cannot divide by zero";
+        }
+        private void btnSqrRoot_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtResult.Text))
+            {
+                double result = double.Parse(txtResult.Text);
+                if (result >= 0)
+                {
+                    result = Math.Sqrt(result);
+                    txtResult.Text = result.ToString();
+                }
+                else
+                    txtResult.Text = "Invalid value";
+            }
+        }
+        private void btnSquare_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtResult.Text))
+            {
+                double result = Math.Pow(double.Parse(txtResult.Text), 2);
+                txtResult.Text = result.ToString();
+            }
+        }
+        #endregion
+
     }
 }
