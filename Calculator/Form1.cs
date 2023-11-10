@@ -18,144 +18,130 @@ namespace Calculator
             InitializeComponent();
         }
         private string operation = "";
-        private double num1;
-        private double num2;
         private double result = 0;
+        private double preValue = 0;
+        private void ButtonNumber_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (txtResult.Text == "0")
+            {
+                txtResult.Clear();
+            }
+            txtResult.Text += btn.Text;
+        }
         #region Các phím số
         private void btn0_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Text = "0";
-            else
-            {
-                txtResult.Text += btn0.Text;
-                txtShow.Text += btn0.Text;
-            }
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn1.Text;
-            
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn2.Text;
-            
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn3.Text;
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn4.Text;
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn5.Text;
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn6.Text;
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn7.Text;
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn8.Text;
+            ButtonNumber_Click(sender, e);
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text == "0")
-                txtResult.Clear();
-            txtResult.Text += btn9.Text;
+            ButtonNumber_Click(sender, e);
         }
         #endregion
+
+        private void btnOperator_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            double num = double.Parse(txtResult.Text);
+            if (operation == "+")
+                result += num;
+            else if (operation == "-")
+                result -= num;
+            else if (operation == "x")
+                result *= num;
+            else if (operation == "/")
+                result /= num;
+            else
+                result = num;
+
+            operation = btn.Text;
+            txtShow.Text = result.ToString() + operation.ToString();
+            preValue = result;
+            txtResult.Clear();
+            
+        }
         #region Các toán tử
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            operation = button.Text;
-            num1 = double.Parse(txtResult.Text);
-            txtShow.Text = num1.ToString() + button.Text;
-            txtResult.Clear();
+            btnOperator_Click(sender,e);
         }
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            operation = button.Text;
-            num1 = double.Parse(txtResult.Text);
-            txtShow.Text = num1.ToString() + button.Text;
-            txtResult.Clear();
+            btnOperator_Click(sender,e);
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            operation = button.Text;
-            num1 = double.Parse(txtResult.Text);
-            txtShow.Text = num1.ToString() + button.Text;
-            txtResult.Clear();
+            btnOperator_Click(sender ,e);
         }
 
         private void btnDivision_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            operation = button.Text;
-            num1 = double.Parse(txtResult.Text);
-            txtShow.Text = num1.ToString() + button.Text;
-            txtResult.Clear();
-        }
-        private void btnEqual_Click(object sender, EventArgs e)
-        {
-            num2 = double.Parse(txtResult.Text);
-            switch (operation)
-            { 
-                case "+":
-                    result = num1 + num2;
-                    break;
-                case "-":
-                    result = num1 - num2;
-                    break;
-                case "x":
-                    result = num1 * num2;
-                    break;
-                case "/":
-                    result = num1 / num2;
-                    break;  
-            }
-            txtShow.Text = num1.ToString() + operation.ToString() + num2.ToString() + " =";
-            txtResult.Text = result.ToString();
-            
+            btnOperator_Click(sender ,e);
         }
         #endregion
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            double num = double.Parse(txtResult.Text);
+            if (operation == "+")
+                result += num;
+            else if (operation == "-")
+                result -= num;
+            else if (operation == "x")
+                result *= num;
+            else if (operation == "/")
+                result /= num;
+            else
+                result = num;
+
+            txtShow.Text = preValue.ToString() + operation.ToString() + num.ToString() + " =";
+            txtResult.Text = result.ToString();
+            preValue = result;
+            operation = "";
+            
+        }
         #region Các phím chức năng
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -184,7 +170,7 @@ namespace Calculator
         }
         private void btnPercentage_Click(object sender, EventArgs e)
         {
-            num1 = double.Parse(txtResult.Text) / 100;
+            double num1 = double.Parse(txtResult.Text) / 100;
             txtResult.Text = num1.ToString();
         }
 
@@ -231,6 +217,5 @@ namespace Calculator
             }
         }
         #endregion
-
     }
 }
