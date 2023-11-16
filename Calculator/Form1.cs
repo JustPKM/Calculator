@@ -124,23 +124,30 @@ namespace Calculator
         #endregion
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            double num = double.Parse(txtResult.Text);
-            if (operation == "+")
-                result += num;
-            else if (operation == "-")
-                result -= num;
-            else if (operation == "x")
-                result *= num;
-            else if (operation == "/")
-                result /= num;
-            else
-                result = num;
+            if (operation != "")
+            {
+                double num = double.Parse(txtResult.Text);
+                if (operation == "+")
+                    result += num;
+                else if (operation == "-")
+                    result -= num;
+                else if (operation == "x")
+                    result *= num;
+                else if (operation == "/")
+                    result /= num;
+                else
+                    result = num;
 
-            txtShow.Text = preValue.ToString() + operation.ToString() + num.ToString() + " =";
-            txtResult.Text = result.ToString();
-            preValue = result;
-            operation = "";
-            
+                txtShow.Text = preValue.ToString() + operation.ToString() + num.ToString() + " =";
+                txtResult.Text = result.ToString();
+                preValue = result;
+                operation = "";
+            }
+            else
+            {
+                result = double.Parse(txtResult.Text);
+                txtShow.Text = result.ToString();
+            }
         }
         #region Các phím chức năng
         private void btnClear_Click(object sender, EventArgs e)
