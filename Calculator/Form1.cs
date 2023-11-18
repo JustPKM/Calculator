@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Calculator
 {
     public partial class Calculator : Form
     {
+        private string operation = "";
+        private double result = 0;
+        private double val,preValue = 0;
+        string op;
         public Calculator()
         {
             InitializeComponent();
+            this.KeyDown += Calculator_KeyDown;
         }
-        private string operation = "";
-        private double result = 0;
-        private double preValue = 0;
+
+
         private void ButtonNumber_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -124,9 +129,12 @@ namespace Calculator
         #endregion
         private void btnEqual_Click(object sender, EventArgs e)
         {
+            btnEqual.Focus();
+
             if (operation != "")
             {
                 double num = double.Parse(txtResult.Text);
+                val = num;
                 if (operation == "+")
                     result += num;
                 else if (operation == "-")
@@ -138,6 +146,8 @@ namespace Calculator
                 else
                     result = num;
 
+
+                op = operation;
                 txtShow.Text = preValue.ToString() + operation.ToString() + num.ToString() + " =";
                 txtResult.Text = result.ToString();
                 preValue = result;
@@ -145,8 +155,29 @@ namespace Calculator
             }
             else
             {
-                result = double.Parse(txtResult.Text);
-                txtShow.Text = result.ToString();
+                if (txtShow.Text == "")
+                {
+                    result = double.Parse(txtResult.Text);
+                    txtShow.Text = result.ToString();
+                }
+                else
+                {
+                    if (op == "+")
+                        result += val;
+                    else if (op == "-")
+                        result -= val;
+                    else if (op == "x")
+                        result *= val;
+                    else if (op == "/")
+                        result /= val; 
+                    else
+                        result = val;
+
+                    txtShow.Text = preValue.ToString() + op.ToString() + val.ToString() + " =";
+                    txtResult.Text = result.ToString();
+                    preValue = result;
+                    
+                }
             }
         }
         #region Các phím chức năng
@@ -224,5 +255,76 @@ namespace Calculator
             }
         }
         #endregion
+
+        private void Calculator_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!e.Handled)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.NumPad0:
+                    case Keys.D0:
+                        btn0.PerformClick();
+                        break;
+                    case Keys.NumPad1:
+                    case Keys.D1:
+                        btn1.PerformClick();
+                        break;
+                    case Keys.NumPad2:
+                    case Keys.D2:
+                        btn2.PerformClick();
+                        break;
+                    case Keys.NumPad3:
+                    case Keys.D3:
+                        btn3.PerformClick();
+                        break;
+                    case Keys.NumPad4:
+                    case Keys.D4:
+                        btn4.PerformClick();
+                        break;
+                    case Keys.NumPad5:
+                    case Keys.D5:
+                        btn5.PerformClick();
+                        break;
+                    case Keys.NumPad6:
+                    case Keys.D6:
+                        btn6.PerformClick();
+                        break;
+                    case Keys.NumPad7:
+                    case Keys.D7:
+                        btn7.PerformClick();
+                        break;
+                    case Keys.NumPad8:
+                    case Keys.D8:
+                        btn8.PerformClick();
+                        break;
+                    case Keys.NumPad9:
+                    case Keys.D9:
+                        btn9.PerformClick();
+                        break;
+                    case Keys.Add:
+                    case Keys.Oemplus:
+                        btnPlus.PerformClick();
+                        break;
+                    case Keys.Subtract:
+                    case Keys.OemMinus:
+                        btnMinus.PerformClick();
+                        break;
+                    case Keys.Multiply:
+                        btnMultiply.PerformClick();
+                        break;
+                    case Keys.Divide:
+                    case Keys.OemQuestion:
+                        btnDivision.PerformClick();
+                        break;
+                    case Keys.Enter: //Khong su dung duoc
+                        btnEqual_Click(sender,e);
+                        break;
+                    default:
+                        return;
+                }
+                e.Handled = true;
+            }
+        }
     }
 }
