@@ -14,10 +14,13 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
+        bool sidebarExpand;
+        bool hasResult = false;
         private string operation = "";
         private double result = 0;
         private double val,preValue = 0;
         string op;
+        
         public Calculator()
         {
             InitializeComponent();
@@ -32,7 +35,16 @@ namespace Calculator
             {
                 txtResult.Clear();
             }
-            txtResult.Text += btn.Text;
+            if (hasResult)
+            {
+                txtShow.Clear();
+                txtResult.Text = btn.Text;
+                hasResult = false;
+            }
+            else
+            {
+                txtResult.Text += btn.Text;
+            }
         }
         #region Các phím số
         private void btn0_Click(object sender, EventArgs e)
@@ -129,8 +141,6 @@ namespace Calculator
         #endregion
         private void btnEqual_Click(object sender, EventArgs e)
         {
-            btnEqual.Focus();
-
             if (operation != "")
             {
                 double num = double.Parse(txtResult.Text);
@@ -179,6 +189,10 @@ namespace Calculator
                     
                 }
             }
+            hasResult = true;
+            rtbHistory.AppendText(txtShow.Text);
+            rtbHistory.AppendText(" "+ txtResult.Text + "\n");
+            lblStatus.Text = "";
         }
         #region Các phím chức năng
         private void btnClear_Click(object sender, EventArgs e)
@@ -188,6 +202,11 @@ namespace Calculator
 
         private void btnAllClear_Click(object sender, EventArgs e)
         {
+            rtbHistory.Clear();
+            if (lblStatus.Text == "")
+            {
+                lblStatus.Text = "There's no history yet";
+            }
             txtResult.Clear();
             txtShow.Clear();
             txtResult.Text = "0";
@@ -256,6 +275,71 @@ namespace Calculator
         }
         #endregion
 
+        private void siderbarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if(sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    siderbarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if(sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    siderbarTimer.Stop();
+                }
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            siderbarTimer.Start();
+            if (!sidebarExpand)
+            {
+                lblType.Hide();
+            }else { 
+                lblType.Show();
+            }
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTemperatureMode_Click(object sender, EventArgs e)
+        {
+            Length f = new Length();
+            this.Hide();
+            f.Show();
+        }
+
+        private void Calculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnStandardMode_Click(object sender, EventArgs e)
+        {
+            siderbarTimer.Start();
+            sidebarExpand = true;
+            siderbarTimer_Tick(sender, e);
+            if (sidebarExpand && sidebar.Width == sidebar.MaximumSize.Width)
+            {
+                lblType.Hide();
+            }
+            else
+            {
+                lblType.Show();
+            }
+        }
+
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
             if (!e.Handled)
@@ -317,8 +401,14 @@ namespace Calculator
                     case Keys.OemQuestion:
                         btnDivision.PerformClick();
                         break;
-                    case Keys.Enter: //Khong su dung duoc
-                        btnEqual_Click(sender,e);
+                    case Keys.Enter:
+                        btnEqual_Click(sender, e);
+                        break;
+                    case Keys.Back:
+                        btnBackSpace.PerformClick();
+                        break;
+                    case Keys.Escape:
+                        btnAllClear.PerformClick();
                         break;
                     default:
                         return;
