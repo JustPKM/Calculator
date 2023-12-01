@@ -198,29 +198,6 @@ namespace Calculator
                 lblType.Show();
             }
         }
-
-        private void btnTemperatureMode_Click(object sender, EventArgs e)
-        {
-            siderbarTimer.Start();
-            sidebarExpand = true;
-            siderbarTimer_Tick(sender, e);
-            if (sidebarExpand && sidebar.Width == sidebar.MaximumSize.Width)
-            {
-                lblType.Hide();
-            }
-            else
-            {
-                lblType.Show();
-            }
-        }
-
-        private void btnStandardMode_Click(object sender, EventArgs e)
-        {
-            Calculator f = new Calculator();
-            this.Hide();
-            f.Show();
-        }
-
         private void Temperature_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -305,6 +282,33 @@ namespace Calculator
             Scientific s = new Scientific();
             this.Hide();
             s.Show();
+        }
+        private void btnStandardMode_Click(object sender, EventArgs e)
+        {
+            Calculator f = new Calculator();
+            this.Hide();
+            f.Show();
+        }
+        private void btnTemperatureMode_Click(object sender, EventArgs e)
+        {
+            siderbarTimer.Start();
+            sidebarExpand = true;
+            siderbarTimer_Tick(sender, e);
+            if (sidebarExpand && sidebar.Width == sidebar.MaximumSize.Width)
+            {
+                lblType.Hide();
+            }
+            else
+            {
+                lblType.Show();
+            }
+        }
+
+        private void btnLengthMode_Click(object sender, EventArgs e)
+        {
+            Length l = new Length();
+            this.Hide();
+            l.Show();
         }
     }
 }

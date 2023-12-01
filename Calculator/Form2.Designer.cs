@@ -59,6 +59,7 @@
             this.btnScientificMode = new System.Windows.Forms.Button();
             this.btnTemperatureMode = new System.Windows.Forms.Button();
             this.siderbarTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnLengthMode = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -300,7 +301,7 @@
             this.lblInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.lblInput.Location = new System.Drawing.Point(140, 89);
             this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(36, 39);
+            this.lblInput.Size = new System.Drawing.Size(29, 31);
             this.lblInput.TabIndex = 18;
             this.lblInput.Text = "0";
             // 
@@ -310,7 +311,7 @@
             this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.lblOutput.Location = new System.Drawing.Point(140, 199);
             this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(0, 39);
+            this.lblOutput.Size = new System.Drawing.Size(0, 31);
             this.lblOutput.TabIndex = 19;
             // 
             // lblType
@@ -320,7 +321,7 @@
             this.lblType.Location = new System.Drawing.Point(97, 27);
             this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(211, 39);
+            this.lblType.Size = new System.Drawing.Size(169, 31);
             this.lblType.TabIndex = 20;
             this.lblType.Text = "Temperature";
             // 
@@ -331,6 +332,7 @@
             this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.btnTemperatureMode);
+            this.sidebar.Controls.Add(this.btnLengthMode);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Margin = new System.Windows.Forms.Padding(4);
@@ -358,7 +360,7 @@
             this.label2.Location = new System.Drawing.Point(95, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 31);
+            this.label2.Size = new System.Drawing.Size(110, 26);
             this.label2.TabIndex = 16;
             this.label2.Text = "Calculator";
             // 
@@ -448,6 +450,22 @@
             this.siderbarTimer.Interval = 1;
             this.siderbarTimer.Tick += new System.EventHandler(this.siderbarTimer_Tick);
             // 
+            // btnLengthMode
+            // 
+            this.btnLengthMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLengthMode.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold);
+            this.btnLengthMode.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLengthMode.Image = ((System.Drawing.Image)(resources.GetObject("btnLengthMode.Image")));
+            this.btnLengthMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLengthMode.Location = new System.Drawing.Point(4, 355);
+            this.btnLengthMode.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLengthMode.Name = "btnLengthMode";
+            this.btnLengthMode.Size = new System.Drawing.Size(273, 78);
+            this.btnLengthMode.TabIndex = 19;
+            this.btnLengthMode.Text = "Length";
+            this.btnLengthMode.UseVisualStyleBackColor = true;
+            this.btnLengthMode.Click += new System.EventHandler(this.btnLengthMode_Click);
+            // 
             // Temperature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -523,5 +541,6 @@
         private System.Windows.Forms.Button btnTemperatureMode;
         private System.Windows.Forms.Timer siderbarTimer;
         private System.Windows.Forms.Button btnScientificMode;
+        private System.Windows.Forms.Button btnLengthMode;
     }
 }

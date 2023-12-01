@@ -42,5 +42,134 @@ namespace Calculator
         {
             return CelsiusToFahrenheit(KelvinToCelsius(kelvin));
         }
+
+        //Độ dài
+
+        //Hàm chuyển đổi từ Met 
+        public double MetersToKilometers(double m) 
+        { 
+            return m * 0.001;
+        }
+        public double MetersToCentimeters(double m)
+        {
+            return m * 100;
+        }
+        public double MetersToMilimeters(double m)
+        {
+            return m * 1000;
+        }
+        public double MetersToInches(double m)
+        {
+            return m * 39.3701;
+        }
+        public double MetersToMiles(double m)
+        {
+            return m * 0.000621371;
+        }
+        //Hàm chuyển đổi từ Milimet 
+        public double MilimetersToKilometers(double m)
+        {
+            return m * 0.000001;
+        }
+        public double MilimetersToMeters(double m)
+        {
+            return m * 0.001;
+        }
+        public double MilimetersToCentimeters(double m)
+        {
+            return m * 0.1;
+        }
+        public double MilimetersToInches(double m)
+        {
+            return m * 0.0393701;
+        }
+        public double MilimetersToMiles (double m)
+        {
+            return m * 0.000000621371;
+        }
+        //Hàm chuyển đổi từ Centimet 
+        public double CentimetersToKilometers(double m)
+        {
+            return m * 0.00001;
+        }
+        public double CentimetersToMeters(double m)
+        {
+            return m * 0.01;
+        }
+        public double CentimetersToMilimeters(double m)
+        {
+            return m * 10;
+        }
+        public double CentimetersToInches(double m)
+        {
+            return m * 0.393701;
+        }
+        public double CentimetersToMiles(double m)
+        {
+            return m * 0.00000621371;
+        }
+        //Hàm chuyển đổi từ Kilomet
+        public double KilometersToMeters(double m)
+        {
+            return m * 1000;
+        }
+        public double KilometersToCentimeters(double m)
+        {
+            return m * 100000;
+        }
+        public double KilometersToMilimeters(double m)
+        {
+            return m * 1000000;
+        }
+        public double KilometersToInches(double m)
+        {
+            return m * 39370.1;
+        }
+        public double KilometersToMiles(double m)
+        {
+            return m * 0.621371;
+        }
+        //Hàm chuyển đổi từ Inches
+        public double InchesToKilometers(double m)
+        {
+            return m * 0.0000254;
+        }
+        public double InchesToMeters(double m)
+        {
+            return m * 0.0254;
+        }
+        public double InchesToCentimeters(double m)
+        {
+            return m * 2.54;
+        }
+        public double InchesToMilimeters(double m)
+        {
+            return m * 25.4;
+        }
+        public double InchesToMiles(double m)
+        {
+            return m * 0.000015782;
+        }
+        //Hàm chuyển đổi từ Miles
+        public double MilesToKilometers(double m)
+        {
+            return m * 1.609344;
+        }
+        public double MilesToMeters(double m)
+        {
+            return m * 1609.344;
+        }
+        public double MilesToCentimeters(double m)
+        {
+            return m * 160934.4;
+        }
+        public double MilesToMilimeters(double m)
+        {
+            return m * 1609344;
+        }
+        public double MilesToInches(double m)
+        {
+            return m * 63360;
+        }
     }
 }

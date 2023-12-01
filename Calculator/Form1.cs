@@ -341,6 +341,13 @@ namespace Calculator
             s.Show();
         }
 
+        private void btnLengthMode_Click(object sender, EventArgs e)
+        {
+            Length l = new Length();
+            this.Hide();
+            l.Show();
+        }
+
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
             if (!e.Handled)

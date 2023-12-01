@@ -75,6 +75,12 @@ namespace Calculator
             this.Hide();
             f.Show();
         }
+        private void btnLengthMode_Click(object sender, EventArgs e)
+        {
+            Length l = new Length();
+            this.Hide();
+            l.Show();
+        }
         #region Các nút chức năng
         private void btnBackSpace_Click(object sender, EventArgs e)
         {

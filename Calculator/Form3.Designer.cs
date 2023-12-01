@@ -83,6 +83,7 @@
             this.btnTanh = new System.Windows.Forms.Button();
             this.btnEXP = new System.Windows.Forms.Button();
             this.btnCoth = new System.Windows.Forms.Button();
+            this.btnLengthMode = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -267,6 +268,7 @@
             this.sidebar.Controls.Add(this.panel2);
             this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.btnTemperatureMode);
+            this.sidebar.Controls.Add(this.btnLengthMode);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Margin = new System.Windows.Forms.Padding(4);
@@ -817,6 +819,22 @@
             this.btnCoth.UseVisualStyleBackColor = false;
             this.btnCoth.Click += new System.EventHandler(this.btnCoth_Click);
             // 
+            // btnLengthMode
+            // 
+            this.btnLengthMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLengthMode.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold);
+            this.btnLengthMode.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLengthMode.Image = ((System.Drawing.Image)(resources.GetObject("btnLengthMode.Image")));
+            this.btnLengthMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLengthMode.Location = new System.Drawing.Point(4, 355);
+            this.btnLengthMode.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLengthMode.Name = "btnLengthMode";
+            this.btnLengthMode.Size = new System.Drawing.Size(273, 78);
+            this.btnLengthMode.TabIndex = 19;
+            this.btnLengthMode.Text = "Length";
+            this.btnLengthMode.UseVisualStyleBackColor = true;
+            this.btnLengthMode.Click += new System.EventHandler(this.btnLengthMode_Click);
+            // 
             // Scientific
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -940,5 +958,6 @@
         private System.Windows.Forms.Button btnTanh;
         private System.Windows.Forms.Button btnEXP;
         private System.Windows.Forms.Button btnCoth;
+        private System.Windows.Forms.Button btnLengthMode;
     }
 }
