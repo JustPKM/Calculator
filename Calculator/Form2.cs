@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Length : Form
+    public partial class Temperature : Form
     {
         private double result = 0;
         private bool sidebarExpand;
         Converting cs;
 
-        public Length()
+        public Temperature()
         {
             InitializeComponent();
         }
@@ -20,24 +20,6 @@ namespace Calculator
             {
                 result = double.Parse(lblInput.Text) * -1;
                 lblInput.Text = result.ToString();
-            }
-        }
-
-        private void Length_Load(object sender, EventArgs e)
-        {
-            cbbConvertUnits.Text = "Celsius";
-            cbbConvertedUnits.Text = "Fahrenheit";
-            if (cbbConvertUnits.Text == "Celsius")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Fahrenheit")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
             }
         }
 
@@ -239,7 +221,12 @@ namespace Calculator
             f.Show();
         }
 
-        private void Length_KeyDown(object sender, KeyEventArgs e)
+        private void Temperature_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Temperature_KeyDown(object sender, KeyEventArgs e)
         {
             if (!e.Handled)
             {
@@ -295,9 +282,29 @@ namespace Calculator
             }
         }
 
-        private void Length_FormClosing(object sender, FormClosingEventArgs e)
+        private void Temperature_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            cbbConvertUnits.Text = "Celsius";
+            cbbConvertedUnits.Text = "Fahrenheit";
+            if (cbbConvertUnits.Text == "Celsius")
+            {
+                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
+            }
+            else if (cbbConvertUnits.Text == "Fahrenheit")
+            {
+                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
+            }
+            else
+            {
+                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
+            }
+        }
+
+        private void btnScientificMode_Click(object sender, EventArgs e)
+        {
+            Scientific s = new Scientific();
+            this.Hide();
+            s.Show();
         }
     }
 }

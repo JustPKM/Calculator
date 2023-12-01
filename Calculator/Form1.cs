@@ -114,7 +114,7 @@ namespace Calculator
                 result = num;
 
             operation = btn.Text;
-            txtShow.Text = result.ToString() + operation.ToString();
+            txtShow.Text = result.ToString() + " "+ operation.ToString();
             preValue = result;
             txtResult.Clear();
             
@@ -158,7 +158,7 @@ namespace Calculator
 
 
                 op = operation;
-                txtShow.Text = preValue.ToString() + operation.ToString() + num.ToString() + " =";
+                txtShow.Text = preValue.ToString() + " " + operation.ToString() + " " + num.ToString() + " =";
                 txtResult.Text = result.ToString();
                 preValue = result;
                 operation = "";
@@ -183,7 +183,7 @@ namespace Calculator
                     else
                         result = val;
 
-                    txtShow.Text = preValue.ToString() + op.ToString() + val.ToString() + " =";
+                    txtShow.Text = preValue.ToString() + " " + op.ToString() + " "+ val.ToString() + " =";
                     txtResult.Text = result.ToString();
                     preValue = result;
                     
@@ -307,15 +307,9 @@ namespace Calculator
                 lblType.Show();
             }
         }
-
-        private void btnHistory_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnTemperatureMode_Click(object sender, EventArgs e)
         {
-            Length f = new Length();
+            Temperature f = new Temperature();
             this.Hide();
             f.Show();
         }
@@ -338,6 +332,13 @@ namespace Calculator
             {
                 lblType.Show();
             }
+        }
+
+        private void btnScientificMode_Click(object sender, EventArgs e)
+        {
+            Scientific s = new Scientific();
+            this.Hide();
+            s.Show();
         }
 
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
@@ -401,8 +402,8 @@ namespace Calculator
                     case Keys.OemQuestion:
                         btnDivision.PerformClick();
                         break;
-                    case Keys.Enter:
-                        btnEqual_Click(sender, e);
+                    case Keys.Enter://Dong nay khong chay
+                        btnEqual.PerformClick();
                         break;
                     case Keys.Back:
                         btnBackSpace.PerformClick();
