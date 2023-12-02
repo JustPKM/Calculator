@@ -12,7 +12,6 @@ namespace Calculator
 {
     public partial class Length : Form
     {
-        private double result = 0;
         private bool sidebarExpand;
         Converting cs;
         public Length()

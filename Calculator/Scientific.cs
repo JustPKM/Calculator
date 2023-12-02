@@ -15,13 +15,15 @@ namespace Calculator
         public Scientific()
         {
             InitializeComponent();
+            this.KeyDown += Scientific_KeyDown;
+            this.Size = new Size(529, 617);
         }
-        
-        bool sidebarExpand,hasResult = false;
-        private string op,operation = "";
+
+        private bool sidebarExpand, hasResult = false, formExpand = false;
+        private string oldOperation, operation = "";
         private double result = 0;
         private double val, preValue = 0;
-        
+
         private void Scientific_Click(object sender, EventArgs e)
         {
             if (sender is Button)
@@ -42,6 +44,7 @@ namespace Calculator
                     txtResult.Text += btn.Text;
                 }
             }
+            btnEqual.Focus();
         }
 
         private void Scientific_FormClosing(object sender, FormClosingEventArgs e)
@@ -177,13 +180,13 @@ namespace Calculator
                 result *= num;
             else if (operation == "/")
                 result /= num;
-            else if(operation == "mod")
+            else if (operation == "mod")
                 result %= num;
             else
                 result = num;
 
             operation = btn.Text;
-            txtShow.Text = result.ToString() + " "+ operation.ToString();
+            txtShow.Text = result.ToString() + " " + operation.ToString();
             preValue = result;
             txtResult.Clear();
 
@@ -214,56 +217,67 @@ namespace Calculator
         }
         #endregion
 
-        #region 
+        #region Toán lượng giác
         private void btnLogarit_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Log(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
 
         private void btnLN_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Log10(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
         private void btnSin_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Sin(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
         private void btnCos_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Cos(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
 
         private void btnTan_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Tan(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
 
         private void btnCotan_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(1 / Math.Tan(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
         private void btnSinh_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Sinh(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
 
         private void btnCosh_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Cosh(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
 
         private void btnTanh_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Tanh(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
 
         private void btnCoth_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(1 / Math.Tanh(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
         private void btnEXP_Click(object sender, EventArgs e)
         {
             txtResult.Text = Convert.ToString(Math.Exp(double.Parse(txtResult.Text)));
+            btnEqual.Focus();
         }
         #endregion
         private void btnMenu_Click(object sender, EventArgs e)
@@ -279,7 +293,24 @@ namespace Calculator
             }
         }
 
+        private void Scientific_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = btnEqual;
+            this.AcceptButton = btnEqual;
+        }
 
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            if (formExpand)
+            {
+                this.Size = new Size(529, 617);
+            }
+            else
+            {
+                this.Size = new Size(733, 617);
+            }
+            formExpand = !formExpand;
+        }
 
         private void siderbarTimer_Tick(object sender, EventArgs e)
         {
@@ -364,9 +395,6 @@ namespace Calculator
                     case Keys.OemQuestion:
                         btnDivision.PerformClick();
                         break;
-                    case Keys.Enter://Dong nay khong chay
-                        btnEqual.PerformClick();
-                        break;
                     case Keys.Back:
                         btnBackSpace.PerformClick();
                         break;
@@ -393,13 +421,11 @@ namespace Calculator
                     result *= num;
                 else if (operation == "/")
                     result /= num;
-                else if(operation == "mod")
-                    result %= num;
                 else
                     result = num;
 
 
-                op = operation;
+                oldOperation = operation;
                 txtShow.Text = preValue.ToString() + " " + operation.ToString() + " " + num.ToString() + " =";
                 txtResult.Text = result.ToString();
                 preValue = result;
@@ -407,27 +433,25 @@ namespace Calculator
             }
             else
             {
-                if (txtShow.Text == "")
+                if (txtShow.Text == "" || string.IsNullOrEmpty(oldOperation))
                 {
                     result = double.Parse(txtResult.Text);
-                    txtShow.Text = result.ToString();
+                    txtShow.Text = result.ToString() + " =";
                 }
                 else
                 {
-                    if (op == "+")
+                    if (oldOperation == "+")
                         result += val;
-                    else if (op == "-")
+                    else if (oldOperation == "-")
                         result -= val;
-                    else if (op == "x")
+                    else if (oldOperation == "x")
                         result *= val;
-                    else if (op == "/")
+                    else if (oldOperation == "/")
                         result /= val;
-                    else if(op == "mod")
-                        result %= val;
                     else
                         result = val;
 
-                    txtShow.Text = preValue.ToString() + op.ToString() + val.ToString() + " =";
+                    txtShow.Text = preValue.ToString() + " " + oldOperation.ToString() + " " + val.ToString() + " =";
                     txtResult.Text = result.ToString();
                     preValue = result;
 
@@ -437,6 +461,7 @@ namespace Calculator
             rtbHistory.AppendText(txtShow.Text);
             rtbHistory.AppendText(" " + txtResult.Text + "\n");
             lblStatus.Text = "";
+            btnEqual.Focus();
         }
     }
 }

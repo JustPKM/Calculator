@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTemperatureMode = new System.Windows.Forms.Button();
+            this.btnLengthMode = new System.Windows.Forms.Button();
             this.lblType = new System.Windows.Forms.Label();
             this.lblOutput = new System.Windows.Forms.Label();
             this.lblInput = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.btn4 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
-            this.btnLengthMode = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -79,9 +79,10 @@
             this.btnScientificMode.ForeColor = System.Drawing.Color.Transparent;
             this.btnScientificMode.Image = ((System.Drawing.Image)(resources.GetObject("btnScientificMode.Image")));
             this.btnScientificMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnScientificMode.Location = new System.Drawing.Point(-4, -1);
+            this.btnScientificMode.Location = new System.Drawing.Point(-3, -1);
+            this.btnScientificMode.Margin = new System.Windows.Forms.Padding(2);
             this.btnScientificMode.Name = "btnScientificMode";
-            this.btnScientificMode.Size = new System.Drawing.Size(270, 65);
+            this.btnScientificMode.Size = new System.Drawing.Size(202, 53);
             this.btnScientificMode.TabIndex = 19;
             this.btnScientificMode.Text = "Scientific";
             this.btnScientificMode.UseVisualStyleBackColor = false;
@@ -91,10 +92,9 @@
             // 
             this.panel3.Controls.Add(this.btnScientificMode);
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(4, 202);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(3, 163);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(257, 59);
+            this.panel3.Size = new System.Drawing.Size(193, 48);
             this.panel3.TabIndex = 18;
             // 
             // btnStandardMode
@@ -104,10 +104,9 @@
             this.btnStandardMode.ForeColor = System.Drawing.Color.Transparent;
             this.btnStandardMode.Image = ((System.Drawing.Image)(resources.GetObject("btnStandardMode.Image")));
             this.btnStandardMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStandardMode.Location = new System.Drawing.Point(-4, -14);
-            this.btnStandardMode.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStandardMode.Location = new System.Drawing.Point(-3, -11);
             this.btnStandardMode.Name = "btnStandardMode";
-            this.btnStandardMode.Size = new System.Drawing.Size(273, 78);
+            this.btnStandardMode.Size = new System.Drawing.Size(205, 63);
             this.btnStandardMode.TabIndex = 1;
             this.btnStandardMode.Text = "Standard";
             this.btnStandardMode.UseVisualStyleBackColor = true;
@@ -117,10 +116,9 @@
             // 
             this.panel2.Controls.Add(this.btnStandardMode);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(4, 135);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(3, 109);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(257, 59);
+            this.panel2.Size = new System.Drawing.Size(193, 48);
             this.panel2.TabIndex = 17;
             // 
             // label2
@@ -128,8 +126,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(95, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(71, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 26);
             this.label2.TabIndex = 16;
@@ -139,10 +136,9 @@
             // 
             this.btnMenu.BackColor = System.Drawing.Color.Black;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(0, 30);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenu.Location = new System.Drawing.Point(0, 24);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(59, 47);
+            this.btnMenu.Size = new System.Drawing.Size(44, 38);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMenu.TabIndex = 15;
             this.btnMenu.TabStop = false;
@@ -152,10 +148,9 @@
             // 
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 123);
+            this.panel1.Size = new System.Drawing.Size(193, 100);
             this.panel1.TabIndex = 0;
             // 
             // sidebar
@@ -168,11 +163,10 @@
             this.sidebar.Controls.Add(this.btnLengthMode);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
-            this.sidebar.MaximumSize = new System.Drawing.Size(261, 732);
-            this.sidebar.MinimumSize = new System.Drawing.Size(68, 732);
+            this.sidebar.MaximumSize = new System.Drawing.Size(196, 595);
+            this.sidebar.MinimumSize = new System.Drawing.Size(51, 595);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(68, 732);
+            this.sidebar.Size = new System.Drawing.Size(51, 595);
             this.sidebar.TabIndex = 41;
             // 
             // btnTemperatureMode
@@ -182,21 +176,34 @@
             this.btnTemperatureMode.ForeColor = System.Drawing.Color.Transparent;
             this.btnTemperatureMode.Image = ((System.Drawing.Image)(resources.GetObject("btnTemperatureMode.Image")));
             this.btnTemperatureMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTemperatureMode.Location = new System.Drawing.Point(4, 269);
-            this.btnTemperatureMode.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTemperatureMode.Location = new System.Drawing.Point(3, 217);
             this.btnTemperatureMode.Name = "btnTemperatureMode";
-            this.btnTemperatureMode.Size = new System.Drawing.Size(273, 78);
+            this.btnTemperatureMode.Size = new System.Drawing.Size(205, 63);
             this.btnTemperatureMode.TabIndex = 1;
             this.btnTemperatureMode.Text = "Temperature";
             this.btnTemperatureMode.UseVisualStyleBackColor = true;
             this.btnTemperatureMode.Click += new System.EventHandler(this.btnTemperatureMode_Click);
             // 
+            // btnLengthMode
+            // 
+            this.btnLengthMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLengthMode.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold);
+            this.btnLengthMode.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLengthMode.Image = ((System.Drawing.Image)(resources.GetObject("btnLengthMode.Image")));
+            this.btnLengthMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLengthMode.Location = new System.Drawing.Point(3, 286);
+            this.btnLengthMode.Name = "btnLengthMode";
+            this.btnLengthMode.Size = new System.Drawing.Size(205, 63);
+            this.btnLengthMode.TabIndex = 19;
+            this.btnLengthMode.Text = "Length";
+            this.btnLengthMode.UseVisualStyleBackColor = true;
+            this.btnLengthMode.Click += new System.EventHandler(this.btnLengthMode_Click);
+            // 
             // lblType
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lblType.Location = new System.Drawing.Point(84, 34);
-            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Location = new System.Drawing.Point(63, 28);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(97, 31);
             this.lblType.TabIndex = 40;
@@ -206,7 +213,8 @@
             // 
             this.lblOutput.AutoSize = true;
             this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lblOutput.Location = new System.Drawing.Point(127, 206);
+            this.lblOutput.Location = new System.Drawing.Point(95, 167);
+            this.lblOutput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOutput.Name = "lblOutput";
             this.lblOutput.Size = new System.Drawing.Size(0, 31);
             this.lblOutput.TabIndex = 39;
@@ -215,7 +223,8 @@
             // 
             this.lblInput.AutoSize = true;
             this.lblInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lblInput.Location = new System.Drawing.Point(127, 96);
+            this.lblInput.Location = new System.Drawing.Point(95, 78);
+            this.lblInput.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInput.Name = "lblInput";
             this.lblInput.Size = new System.Drawing.Size(29, 31);
             this.lblInput.TabIndex = 38;
@@ -232,10 +241,10 @@
             "Milimeters",
             "Inches",
             "Miles"});
-            this.cbbConvertedUnits.Location = new System.Drawing.Point(92, 262);
-            this.cbbConvertedUnits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbConvertedUnits.Location = new System.Drawing.Point(69, 213);
+            this.cbbConvertedUnits.Margin = new System.Windows.Forms.Padding(2);
             this.cbbConvertedUnits.Name = "cbbConvertedUnits";
-            this.cbbConvertedUnits.Size = new System.Drawing.Size(121, 24);
+            this.cbbConvertedUnits.Size = new System.Drawing.Size(92, 21);
             this.cbbConvertedUnits.TabIndex = 36;
             this.cbbConvertedUnits.SelectedIndexChanged += new System.EventHandler(this.cbbConvertedUnits_SelectedIndexChanged);
             // 
@@ -250,10 +259,10 @@
             "Milimeters",
             "Inches",
             "Miles"});
-            this.cbbConvertUnits.Location = new System.Drawing.Point(92, 141);
-            this.cbbConvertUnits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbConvertUnits.Location = new System.Drawing.Point(69, 115);
+            this.cbbConvertUnits.Margin = new System.Windows.Forms.Padding(2);
             this.cbbConvertUnits.Name = "cbbConvertUnits";
-            this.cbbConvertUnits.Size = new System.Drawing.Size(121, 24);
+            this.cbbConvertUnits.Size = new System.Drawing.Size(92, 21);
             this.cbbConvertUnits.TabIndex = 35;
             this.cbbConvertUnits.SelectedIndexChanged += new System.EventHandler(this.cbbConvertUnits_SelectedIndexChanged);
             // 
@@ -263,10 +272,9 @@
             this.btnBackSpace.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnBackSpace.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBackSpace.Image = ((System.Drawing.Image)(resources.GetObject("btnBackSpace.Image")));
-            this.btnBackSpace.Location = new System.Drawing.Point(335, 300);
-            this.btnBackSpace.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBackSpace.Location = new System.Drawing.Point(251, 244);
             this.btnBackSpace.Name = "btnBackSpace";
-            this.btnBackSpace.Size = new System.Drawing.Size(124, 80);
+            this.btnBackSpace.Size = new System.Drawing.Size(93, 65);
             this.btnBackSpace.TabIndex = 34;
             this.btnBackSpace.TabStop = false;
             this.btnBackSpace.UseVisualStyleBackColor = false;
@@ -277,10 +285,9 @@
             this.btnClear.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnClear.Location = new System.Drawing.Point(204, 300);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(153, 244);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(124, 80);
+            this.btnClear.Size = new System.Drawing.Size(93, 65);
             this.btnClear.TabIndex = 33;
             this.btnClear.TabStop = false;
             this.btnClear.Text = "C";
@@ -291,10 +298,9 @@
             // 
             this.btnDecimal.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnDecimal.Location = new System.Drawing.Point(335, 652);
-            this.btnDecimal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDecimal.Location = new System.Drawing.Point(251, 530);
             this.btnDecimal.Name = "btnDecimal";
-            this.btnDecimal.Size = new System.Drawing.Size(124, 80);
+            this.btnDecimal.Size = new System.Drawing.Size(93, 65);
             this.btnDecimal.TabIndex = 32;
             this.btnDecimal.TabStop = false;
             this.btnDecimal.Text = ".";
@@ -305,10 +311,9 @@
             // 
             this.btn3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn3.Location = new System.Drawing.Point(335, 565);
-            this.btn3.Margin = new System.Windows.Forms.Padding(4);
+            this.btn3.Location = new System.Drawing.Point(251, 459);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(124, 80);
+            this.btn3.Size = new System.Drawing.Size(93, 65);
             this.btn3.TabIndex = 22;
             this.btn3.TabStop = false;
             this.btn3.Text = "3";
@@ -319,10 +324,9 @@
             // 
             this.btn6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn6.Location = new System.Drawing.Point(335, 475);
-            this.btn6.Margin = new System.Windows.Forms.Padding(4);
+            this.btn6.Location = new System.Drawing.Point(251, 386);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(124, 80);
+            this.btn6.Size = new System.Drawing.Size(93, 65);
             this.btn6.TabIndex = 23;
             this.btn6.TabStop = false;
             this.btn6.Text = "6";
@@ -333,10 +337,9 @@
             // 
             this.btn9.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn9.Location = new System.Drawing.Point(335, 387);
-            this.btn9.Margin = new System.Windows.Forms.Padding(4);
+            this.btn9.Location = new System.Drawing.Point(251, 314);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(124, 80);
+            this.btn9.Size = new System.Drawing.Size(93, 65);
             this.btn9.TabIndex = 24;
             this.btn9.TabStop = false;
             this.btn9.Text = "9";
@@ -347,10 +350,9 @@
             // 
             this.btn0.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn0.Location = new System.Drawing.Point(204, 652);
-            this.btn0.Margin = new System.Windows.Forms.Padding(4);
+            this.btn0.Location = new System.Drawing.Point(153, 530);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(124, 80);
+            this.btn0.Size = new System.Drawing.Size(93, 65);
             this.btn0.TabIndex = 25;
             this.btn0.TabStop = false;
             this.btn0.Text = "0";
@@ -361,10 +363,9 @@
             // 
             this.btn2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn2.Location = new System.Drawing.Point(204, 565);
-            this.btn2.Margin = new System.Windows.Forms.Padding(4);
+            this.btn2.Location = new System.Drawing.Point(153, 459);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(124, 80);
+            this.btn2.Size = new System.Drawing.Size(93, 65);
             this.btn2.TabIndex = 26;
             this.btn2.TabStop = false;
             this.btn2.Text = "2";
@@ -375,10 +376,9 @@
             // 
             this.btn1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn1.Location = new System.Drawing.Point(71, 565);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4);
+            this.btn1.Location = new System.Drawing.Point(53, 459);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(124, 80);
+            this.btn1.Size = new System.Drawing.Size(93, 65);
             this.btn1.TabIndex = 27;
             this.btn1.TabStop = false;
             this.btn1.Text = "1";
@@ -389,10 +389,9 @@
             // 
             this.btn5.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn5.Location = new System.Drawing.Point(204, 475);
-            this.btn5.Margin = new System.Windows.Forms.Padding(4);
+            this.btn5.Location = new System.Drawing.Point(153, 386);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(124, 80);
+            this.btn5.Size = new System.Drawing.Size(93, 65);
             this.btn5.TabIndex = 28;
             this.btn5.TabStop = false;
             this.btn5.Text = "5";
@@ -403,10 +402,9 @@
             // 
             this.btn4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn4.Location = new System.Drawing.Point(71, 475);
-            this.btn4.Margin = new System.Windows.Forms.Padding(4);
+            this.btn4.Location = new System.Drawing.Point(53, 386);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(124, 80);
+            this.btn4.Size = new System.Drawing.Size(93, 65);
             this.btn4.TabIndex = 29;
             this.btn4.TabStop = false;
             this.btn4.Text = "4";
@@ -417,10 +415,9 @@
             // 
             this.btn8.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn8.Location = new System.Drawing.Point(204, 387);
-            this.btn8.Margin = new System.Windows.Forms.Padding(4);
+            this.btn8.Location = new System.Drawing.Point(153, 314);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(124, 80);
+            this.btn8.Size = new System.Drawing.Size(93, 65);
             this.btn8.TabIndex = 30;
             this.btn8.TabStop = false;
             this.btn8.Text = "8";
@@ -431,37 +428,20 @@
             // 
             this.btn7.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btn7.Location = new System.Drawing.Point(71, 387);
-            this.btn7.Margin = new System.Windows.Forms.Padding(4);
+            this.btn7.Location = new System.Drawing.Point(53, 314);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(124, 80);
+            this.btn7.Size = new System.Drawing.Size(93, 65);
             this.btn7.TabIndex = 31;
             this.btn7.TabStop = false;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
             this.btn7.Click += new System.EventHandler(this.Length_Click);
             // 
-            // btnLengthMode
-            // 
-            this.btnLengthMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLengthMode.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold);
-            this.btnLengthMode.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLengthMode.Image = ((System.Drawing.Image)(resources.GetObject("btnLengthMode.Image")));
-            this.btnLengthMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLengthMode.Location = new System.Drawing.Point(4, 355);
-            this.btnLengthMode.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLengthMode.Name = "btnLengthMode";
-            this.btnLengthMode.Size = new System.Drawing.Size(273, 78);
-            this.btnLengthMode.TabIndex = 19;
-            this.btnLengthMode.Text = "Length";
-            this.btnLengthMode.UseVisualStyleBackColor = true;
-            this.btnLengthMode.Click += new System.EventHandler(this.btnLengthMode_Click);
-            // 
             // Length
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 733);
+            this.ClientSize = new System.Drawing.Size(355, 596);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.lblOutput);
@@ -482,6 +462,8 @@
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Length";
             this.Text = "Length";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Length_FormClosing);

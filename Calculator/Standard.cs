@@ -14,20 +14,18 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
-        bool sidebarExpand;
+        bool sidebarExpand, formExpand = false;
         bool hasResult = false;
-        private string operation = "";
+        private string oldOperation,operation = "";
         private double result = 0;
         private double val,preValue = 0;
-        string op;
-        
         public Calculator()
         {
             InitializeComponent();
             this.KeyDown += Calculator_KeyDown;
+            this.Size = new Size(483, 634);
+
         }
-
-
         private void ButtonNumber_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -45,6 +43,7 @@ namespace Calculator
             {
                 txtResult.Text += btn.Text;
             }
+            btnEqual.Focus();
         }
         #region Các phím số
         private void btn0_Click(object sender, EventArgs e)
@@ -157,7 +156,7 @@ namespace Calculator
                     result = num;
 
 
-                op = operation;
+                oldOperation = operation;
                 txtShow.Text = preValue.ToString() + " " + operation.ToString() + " " + num.ToString() + " =";
                 txtResult.Text = result.ToString();
                 preValue = result;
@@ -165,25 +164,25 @@ namespace Calculator
             }
             else
             {
-                if (txtShow.Text == "")
+                if (txtShow.Text == "" || string.IsNullOrEmpty(oldOperation))
                 {
                     result = double.Parse(txtResult.Text);
-                    txtShow.Text = result.ToString();
+                    txtShow.Text = result.ToString() + " =";
                 }
                 else
                 {
-                    if (op == "+")
+                    if (oldOperation == "+")
                         result += val;
-                    else if (op == "-")
+                    else if (oldOperation == "-")
                         result -= val;
-                    else if (op == "x")
+                    else if (oldOperation == "x")
                         result *= val;
-                    else if (op == "/")
+                    else if (oldOperation == "/")
                         result /= val; 
                     else
                         result = val;
 
-                    txtShow.Text = preValue.ToString() + " " + op.ToString() + " "+ val.ToString() + " =";
+                    txtShow.Text = preValue.ToString() + " " + oldOperation.ToString() + " "+ val.ToString() + " =";
                     txtResult.Text = result.ToString();
                     preValue = result;
                     
@@ -193,11 +192,13 @@ namespace Calculator
             rtbHistory.AppendText(txtShow.Text);
             rtbHistory.AppendText(" "+ txtResult.Text + "\n");
             lblStatus.Text = "";
+            btnEqual.Focus();
         }
         #region Các phím chức năng
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtResult.Text = "0";
+            btnEqual.Focus();
         }
 
         private void btnAllClear_Click(object sender, EventArgs e)
@@ -210,12 +211,15 @@ namespace Calculator
             txtResult.Clear();
             txtShow.Clear();
             txtResult.Text = "0";
+            btnEqual.Focus();
         }
 
         private void btnDecimal_Click(object sender, EventArgs e)
         {
             if(!txtResult.Text.Contains("."))
                 txtResult.Text += ".";
+
+            btnEqual.Focus();
         }
         private void btnPositiveNegative_Click(object sender, EventArgs e)
         {
@@ -224,11 +228,13 @@ namespace Calculator
                 result = double.Parse(txtResult.Text) * -1;
                 txtResult.Text = result.ToString();
             }
+            btnEqual.Focus();
         }
         private void btnPercentage_Click(object sender, EventArgs e)
         {
             double num1 = double.Parse(txtResult.Text) / 100;
             txtResult.Text = num1.ToString();
+            btnEqual.Focus();
         }
 
         private void btnBackSpace_Click(object sender, EventArgs e)
@@ -239,6 +245,8 @@ namespace Calculator
             }
             if(txtResult.Text == "")
                 txtResult.Text = "0";
+
+            btnEqual.Focus();
         }
 
         private void btnFraction_Click(object sender, EventArgs e)
@@ -250,6 +258,8 @@ namespace Calculator
             }
             else
                 txtResult.Text = "Cannot divide by zero";
+
+            btnEqual.Focus();
         }
         private void btnSqrRoot_Click(object sender, EventArgs e)
         {
@@ -264,6 +274,7 @@ namespace Calculator
                 else
                     txtResult.Text = "Invalid value";
             }
+            btnEqual.Focus();
         }
         private void btnSquare_Click(object sender, EventArgs e)
         {
@@ -272,6 +283,7 @@ namespace Calculator
                 double result = Math.Pow(double.Parse(txtResult.Text), 2);
                 txtResult.Text = result.ToString();
             }
+            btnEqual.Focus();
         }
         #endregion
 
@@ -348,6 +360,25 @@ namespace Calculator
             l.Show();
         }
 
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            if(formExpand)
+            {
+                this.Size = new Size(483, 634);
+            }
+            else
+            {
+                this.Size = new Size(703, 634);
+            }
+            formExpand = !formExpand;
+        }
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = btnEqual;
+            this.AcceptButton = btnEqual;
+        }
+
         private void Calculator_KeyDown(object sender, KeyEventArgs e)
         {
             if (!e.Handled)
@@ -408,9 +439,6 @@ namespace Calculator
                     case Keys.Divide:
                     case Keys.OemQuestion:
                         btnDivision.PerformClick();
-                        break;
-                    case Keys.Enter://Dong nay khong chay
-                        btnEqual.PerformClick();
                         break;
                     case Keys.Back:
                         btnBackSpace.PerformClick();
