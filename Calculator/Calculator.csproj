@@ -46,27 +46,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Converting.cs" />
+    <Compile Include="Standard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Standard.Designer.cs">
+      <DependentUpon>Standard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temperature.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temperature.Designer.cs">
+      <DependentUpon>Temperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scientific.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scientific.Designer.cs">
+      <DependentUpon>Scientific.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Length.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Length.Designer.cs">
+      <DependentUpon>Length.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Standard.resx">
+      <DependentUpon>Standard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temperature.resx">
+      <DependentUpon>Temperature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scientific.resx">
+      <DependentUpon>Scientific.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Length.resx">
+      <DependentUpon>Length.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,7 +103,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\R.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
