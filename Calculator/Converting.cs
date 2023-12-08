@@ -8,13 +8,13 @@ namespace Calculator
 {
     public class Converting
     {
-        public  double CelsiusToFahrenheit(double celsius)
+        public double CelsiusToFahrenheit(double celsius)
         {
             return Math.Round((celsius * 9 / 5) + 32,2);
         }
 
         // Hàm chuyển đổi từ Fahrenheit sang Celsius
-        public  double FahrenheitToCelsius(double fahrenheit)
+        public double FahrenheitToCelsius(double fahrenheit)
         {
             return Math.Round((fahrenheit - 32) * 5 / 9,2);
         }
@@ -66,6 +66,10 @@ namespace Calculator
         {
             return m * 0.000621371;
         }
+        public double MetersToFeet(double m)
+        {
+            return m / 0.3048;
+        }
         //Hàm chuyển đổi từ Milimet 
         public double MilimetersToKilometers(double m)
         {
@@ -86,6 +90,10 @@ namespace Calculator
         public double MilimetersToMiles (double m)
         {
             return m * 0.000000621371;
+        }
+        public double MilimetersToFeet(double m)
+        {
+            return m / 304.8;
         }
         //Hàm chuyển đổi từ Centimet 
         public double CentimetersToKilometers(double m)
@@ -108,6 +116,10 @@ namespace Calculator
         {
             return m * 0.00000621371;
         }
+        public double CentimetersToFeet(double m)
+        {
+            return m / 30.48;
+        }
         //Hàm chuyển đổi từ Kilomet
         public double KilometersToMeters(double m)
         {
@@ -128,6 +140,10 @@ namespace Calculator
         public double KilometersToMiles(double m)
         {
             return m * 0.621371;
+        }
+        public double KilometersToFeet(double m)
+        {
+            return m / 0.000348;
         }
         //Hàm chuyển đổi từ Inches
         public double InchesToKilometers(double m)
@@ -150,6 +166,10 @@ namespace Calculator
         {
             return m * 0.000015782;
         }
+        public double InchesToFeet(double m)
+        {
+            return m / 0.000189394;
+        }
         //Hàm chuyển đổi từ Miles
         public double MilesToKilometers(double m)
         {
@@ -170,6 +190,35 @@ namespace Calculator
         public double MilesToInches(double m)
         {
             return m * 63360;
+        }
+        public double MilesToFeet(double m)
+        {
+            return m / 12;
+        }
+        //Hàm chuyển đổi từ Feet
+        public double FeetToKilometers(double m)
+        {
+            return m * 0.0003048;
+        }
+        public double FeetToMeters(double m)
+        {
+            return m * 0.3048;
+        }
+        public double FeetToCentimeters(double m)
+        {
+            return m * 30.48;
+        }
+        public double FeetToMilimeters(double m)
+        {
+            return m * 304.8;
+        }
+        public double FeetToMiles(double m)
+        {
+            return m * 0.000189394;
+        }
+        public double FeetToInches(double m)
+        {
+            return m * 12;
         }
     }
 }

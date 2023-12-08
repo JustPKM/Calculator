@@ -12,6 +12,7 @@ namespace Calculator
 {
     public partial class Length : Form
     {
+        private double result = 0;
         private bool sidebarExpand;
         Converting cs;
         public Length()
@@ -83,8 +84,6 @@ namespace Calculator
                             return cs.KilometersToInches(value);
                         case "Miles":
                             return cs.KilometersToMiles(value);
-                        case "Feet":
-                            return cs.KilometersToFeet(value);
                         default:
                             return value; // No conversion needed
                     }
@@ -101,8 +100,6 @@ namespace Calculator
                             return cs.MetersToInches(value);
                         case "Miles":
                             return cs.MetersToMiles(value);
-                        case "Feet":
-                            return cs.MetersToFeet(value);
                         default:
                             return value; // No conversion needed
                     }
@@ -119,8 +116,6 @@ namespace Calculator
                             return cs.CentimetersToInches(value);
                         case "Miles":
                             return cs.CentimetersToMiles(value);
-                        case "Feet":
-                            return cs.CentimetersToFeet(value);
                         default:
                             return value; // No conversion needed
                     }
@@ -137,8 +132,6 @@ namespace Calculator
                             return cs.MilimetersToInches(value);
                         case "Miles":
                             return cs.MilimetersToMiles(value);
-                        case "Feet":
-                            return cs.MilimetersToFeet(value);
                         default:
                             return value; // No conversion needed
                     }
@@ -155,8 +148,6 @@ namespace Calculator
                             return cs.InchesToCentimeters(value);
                         case "Miles":
                             return cs.InchesToMiles(value);
-                        case "Feet":
-                            return cs.InchesToFeet(value);
                         default:
                             return value; // No conversion needed
                     }
@@ -173,26 +164,6 @@ namespace Calculator
                             return cs.MilesToInches(value);
                         case "Centimeters":
                             return cs.MilesToCentimeters(value);
-                        case "Feet":
-                            return cs.MilesToFeet(value);
-                        default:
-                            return value; // No conversion needed
-                    }
-                case "Feet":
-                    switch (toUnit)
-                    {
-                        case "Kilometers":
-                            return cs.FeetToKilometers(value);
-                        case "Meters":
-                            return cs.FeetToMeters(value);
-                        case "Milimeters":
-                            return cs.FeetToMilimeters(value);
-                        case "Inches":
-                            return cs.FeetToInches(value);
-                        case "Centimeters":
-                            return cs.FeetToCentimeters(value);
-                        case "Miles":
-                            return cs.FeetToMiles(value);
                         default:
                             return value; // No conversion needed
                     }
@@ -222,10 +193,7 @@ namespace Calculator
             {
                 lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
             }
-            else if(cbbConvertUnits.Text == "Miles")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            } else if(cbbConvertUnits.Text == "Feet")
+            else
             {
                 lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
             }
