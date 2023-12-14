@@ -252,6 +252,9 @@ namespace Calculator
                     case Keys.Back:
                         btnBackSpace.PerformClick();
                         break;
+                    case Keys.F1:
+                        btnMenu_Click(sender, e);
+                        break;
                     default:
                         return;
                 }

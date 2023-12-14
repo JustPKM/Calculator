@@ -465,6 +465,9 @@ namespace Calculator
                     case Keys.Escape:
                         btnAllClear.PerformClick();
                         break;
+                    case Keys.F1:
+                        btnMenu_Click(sender, e); 
+                        break;
                     default:
                         return;
                 }

@@ -22,7 +22,7 @@ namespace Calculator
         private bool sidebarExpand, hasResult = false, formExpand = false;
         private string oldOperation, operation = "";
         private double result = 0;
-        private double val, preValue = 0;
+        private double value, preValue = 0;
 
         private void Scientific_Click(object sender, EventArgs e)
         {
@@ -58,6 +58,18 @@ namespace Calculator
             this.Hide();
             t.Show();
         }
+        private void btnStandardMode_Click(object sender, EventArgs e)
+        {
+            Calculator f = new Calculator();
+            this.Hide();
+            f.Show();
+        }
+        private void btnLengthMode_Click(object sender, EventArgs e)
+        {
+            Length l = new Length();
+            this.Hide();
+            l.Show();
+        }
         private void btnScientificMode_Click(object sender, EventArgs e)
         {
             siderbarTimer.Start();
@@ -72,18 +84,7 @@ namespace Calculator
                 lblType.Show();
             }
         }
-        private void btnStandardMode_Click(object sender, EventArgs e)
-        {
-            Calculator f = new Calculator();
-            this.Hide();
-            f.Show();
-        }
-        private void btnLengthMode_Click(object sender, EventArgs e)
-        {
-            Length l = new Length();
-            this.Hide();
-            l.Show();
-        }
+
         #region Các nút chức năng
         private void btnBackSpace_Click(object sender, EventArgs e)
         {
@@ -217,65 +218,76 @@ namespace Calculator
         }
         #endregion
 
-        #region Toán lượng giác
+        #region Toán lượng giác (Các số được tính được chuyển từ radian)
         private void btnLogarit_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnLogarit.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Log(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
 
         private void btnLN_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnLN.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Log10(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
         private void btnSin_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnSin.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Sin(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
         private void btnCos_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnCos.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Cos(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
 
         private void btnTan_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnTan.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Tan(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
 
         private void btnCotan_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnCotan.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(1 / Math.Tan(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
         private void btnSinh_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnSinh.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Sinh(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
 
         private void btnCosh_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnCosh.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Cosh(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
 
         private void btnTanh_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnTanh.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Tanh(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
 
         private void btnCoth_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnCoth.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(1 / Math.Tanh(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
         private void btnEXP_Click(object sender, EventArgs e)
         {
+            txtShow.Text = btnEXP.Text + " " + txtResult.Text + " =";
             txtResult.Text = Convert.ToString(Math.Exp(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
@@ -410,6 +422,9 @@ namespace Calculator
                     case Keys.Escape:
                         btnAllClear.PerformClick();
                         break;
+                    case Keys.F1:
+                        btnMenu_Click(sender,e);
+                        break;
                     default:
                         return;
                 }
@@ -421,7 +436,7 @@ namespace Calculator
             if (operation != "")
             {
                 double num = double.Parse(txtResult.Text);
-                val = num;
+                value = num;
                 if (operation == "+")
                     result += num;
                 else if (operation == "-")
@@ -450,17 +465,17 @@ namespace Calculator
                 else
                 {
                     if (oldOperation == "+")
-                        result += val;
+                        result += value;
                     else if (oldOperation == "-")
-                        result -= val;
+                        result -= value;
                     else if (oldOperation == "x")
-                        result *= val;
+                        result *= value;
                     else if (oldOperation == "/")
-                        result /= val;
+                        result /= value;
                     else
-                        result = val;
+                        result = value;
 
-                    txtShow.Text = preValue.ToString() + " " + oldOperation.ToString() + " " + val.ToString() + " =";
+                    txtShow.Text = preValue.ToString() + " " + oldOperation.ToString() + " " + value.ToString() + " =";
                     txtResult.Text = result.ToString();
                     preValue = result;
 

@@ -817,7 +817,7 @@
             this.lstHistory.ItemHeight = 31;
             this.lstHistory.Location = new System.Drawing.Point(521, 133);
             this.lstHistory.Name = "lstHistory";
-            this.lstHistory.Size = new System.Drawing.Size(185, 434);
+            this.lstHistory.Size = new System.Drawing.Size(185, 403);
             this.lstHistory.TabIndex = 66;
             this.lstHistory.Click += new System.EventHandler(this.lstHistory_Click);
             // 
@@ -873,7 +873,7 @@
             this.Controls.Add(this.btn7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Scientific";
             this.Text = "Scientific";
