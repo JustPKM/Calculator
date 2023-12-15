@@ -235,27 +235,27 @@ namespace Calculator
         private void btnSin_Click(object sender, EventArgs e)
         {
             txtShow.Text = btnSin.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Sin(double.Parse(txtResult.Text)));
+            txtResult.Text = Convert.ToString(Math.Sin(double.Parse(txtResult.Text) * (Math.PI / 180)));
             btnEqual.Focus();
         }
         private void btnCos_Click(object sender, EventArgs e)
         {
             txtShow.Text = btnCos.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Cos(double.Parse(txtResult.Text)));
+            txtResult.Text = Convert.ToString(Math.Cos(double.Parse(txtResult.Text) * (Math.PI / 180)));
             btnEqual.Focus();
         }
 
         private void btnTan_Click(object sender, EventArgs e)
         {
             txtShow.Text = btnTan.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Tan(double.Parse(txtResult.Text)));
+            txtResult.Text = Convert.ToString(Math.Tan(double.Parse(txtResult.Text) * (Math.PI / 180)));
             btnEqual.Focus();
         }
 
         private void btnCotan_Click(object sender, EventArgs e)
         {
             txtShow.Text = btnCotan.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(1 / Math.Tan(double.Parse(txtResult.Text)));
+            txtResult.Text = Convert.ToString(1 / Math.Tan(double.Parse(txtResult.Text) * (Math.PI / 180)));
             btnEqual.Focus();
         }
         private void btnSinh_Click(object sender, EventArgs e)

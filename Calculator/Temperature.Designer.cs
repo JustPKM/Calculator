@@ -73,7 +73,7 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn3.Location = new System.Drawing.Point(343, 560);
-            this.btn3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn3.Margin = new System.Windows.Forms.Padding(4);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(124, 80);
             this.btn3.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn6.Location = new System.Drawing.Point(343, 470);
-            this.btn6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn6.Margin = new System.Windows.Forms.Padding(4);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(124, 80);
             this.btn6.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn9.Location = new System.Drawing.Point(343, 383);
-            this.btn9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn9.Margin = new System.Windows.Forms.Padding(4);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(124, 80);
             this.btn9.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn0.Location = new System.Drawing.Point(212, 647);
-            this.btn0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn0.Margin = new System.Windows.Forms.Padding(4);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(124, 80);
             this.btn0.TabIndex = 5;
@@ -133,7 +133,7 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn2.Location = new System.Drawing.Point(212, 560);
-            this.btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn2.Margin = new System.Windows.Forms.Padding(4);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(124, 80);
             this.btn2.TabIndex = 6;
@@ -148,7 +148,7 @@
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn1.Location = new System.Drawing.Point(79, 560);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(124, 80);
             this.btn1.TabIndex = 7;
@@ -163,7 +163,7 @@
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn5.Location = new System.Drawing.Point(212, 470);
-            this.btn5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn5.Margin = new System.Windows.Forms.Padding(4);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(124, 80);
             this.btn5.TabIndex = 8;
@@ -178,7 +178,7 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn4.Location = new System.Drawing.Point(79, 470);
-            this.btn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn4.Margin = new System.Windows.Forms.Padding(4);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(124, 80);
             this.btn4.TabIndex = 9;
@@ -193,7 +193,7 @@
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn8.Location = new System.Drawing.Point(212, 383);
-            this.btn8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn8.Margin = new System.Windows.Forms.Padding(4);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(124, 80);
             this.btn8.TabIndex = 10;
@@ -208,7 +208,7 @@
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btn7.Location = new System.Drawing.Point(79, 383);
-            this.btn7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn7.Margin = new System.Windows.Forms.Padding(4);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(124, 80);
             this.btn7.TabIndex = 11;
@@ -223,7 +223,7 @@
             this.btnDecimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDecimal.Location = new System.Drawing.Point(343, 647);
-            this.btnDecimal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDecimal.Margin = new System.Windows.Forms.Padding(4);
             this.btnDecimal.Name = "btnDecimal";
             this.btnDecimal.Size = new System.Drawing.Size(124, 80);
             this.btnDecimal.TabIndex = 12;
@@ -240,7 +240,7 @@
             this.btnBackSpace.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBackSpace.Image = ((System.Drawing.Image)(resources.GetObject("btnBackSpace.Image")));
             this.btnBackSpace.Location = new System.Drawing.Point(343, 295);
-            this.btnBackSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBackSpace.Margin = new System.Windows.Forms.Padding(4);
             this.btnBackSpace.Name = "btnBackSpace";
             this.btnBackSpace.Size = new System.Drawing.Size(124, 80);
             this.btnBackSpace.TabIndex = 14;
@@ -255,7 +255,7 @@
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnClear.Location = new System.Drawing.Point(212, 295);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(124, 80);
             this.btnClear.TabIndex = 13;
@@ -300,7 +300,7 @@
             this.btnPositiveNegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPositiveNegative.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnPositiveNegative.Location = new System.Drawing.Point(79, 647);
-            this.btnPositiveNegative.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPositiveNegative.Margin = new System.Windows.Forms.Padding(4);
             this.btnPositiveNegative.Name = "btnPositiveNegative";
             this.btnPositiveNegative.Size = new System.Drawing.Size(124, 80);
             this.btnPositiveNegative.TabIndex = 17;
@@ -316,7 +316,7 @@
             this.lblInput.ForeColor = System.Drawing.Color.White;
             this.lblInput.Location = new System.Drawing.Point(123, 73);
             this.lblInput.Name = "lblInput";
-            this.lblInput.Size = new System.Drawing.Size(29, 31);
+            this.lblInput.Size = new System.Drawing.Size(36, 39);
             this.lblInput.TabIndex = 18;
             this.lblInput.Text = "0";
             // 
@@ -327,7 +327,7 @@
             this.lblOutput.ForeColor = System.Drawing.Color.White;
             this.lblOutput.Location = new System.Drawing.Point(123, 183);
             this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(0, 31);
+            this.lblOutput.Size = new System.Drawing.Size(0, 39);
             this.lblOutput.TabIndex = 19;
             // 
             // lblType
@@ -338,7 +338,7 @@
             this.lblType.Location = new System.Drawing.Point(81, 26);
             this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(169, 31);
+            this.lblType.Size = new System.Drawing.Size(211, 39);
             this.lblType.TabIndex = 20;
             this.lblType.Text = "Temperature";
             // 
@@ -352,7 +352,7 @@
             this.sidebar.Controls.Add(this.btnLengthMode);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
-            this.sidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sidebar.Margin = new System.Windows.Forms.Padding(4);
             this.sidebar.MaximumSize = new System.Drawing.Size(261, 732);
             this.sidebar.MinimumSize = new System.Drawing.Size(68, 732);
             this.sidebar.Name = "sidebar";
@@ -364,7 +364,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 123);
             this.panel1.TabIndex = 0;
@@ -377,7 +377,7 @@
             this.label2.Location = new System.Drawing.Point(95, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 26);
+            this.label2.Size = new System.Drawing.Size(137, 31);
             this.label2.TabIndex = 16;
             this.label2.Text = "Calculator";
             // 
@@ -386,7 +386,7 @@
             this.btnMenu.BackColor = System.Drawing.Color.Black;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.Location = new System.Drawing.Point(0, 30);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(59, 47);
             this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -399,7 +399,7 @@
             this.panel2.Controls.Add(this.btnStandardMode);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(4, 135);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(257, 59);
             this.panel2.TabIndex = 17;
@@ -412,7 +412,7 @@
             this.btnStandardMode.Image = ((System.Drawing.Image)(resources.GetObject("btnStandardMode.Image")));
             this.btnStandardMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStandardMode.Location = new System.Drawing.Point(-4, -14);
-            this.btnStandardMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStandardMode.Margin = new System.Windows.Forms.Padding(4);
             this.btnStandardMode.Name = "btnStandardMode";
             this.btnStandardMode.Size = new System.Drawing.Size(273, 78);
             this.btnStandardMode.TabIndex = 1;
@@ -425,7 +425,7 @@
             this.panel3.Controls.Add(this.btnScientificMode);
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel3.Location = new System.Drawing.Point(4, 202);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(257, 59);
             this.panel3.TabIndex = 18;
@@ -455,7 +455,7 @@
             this.btnTemperatureMode.Image = ((System.Drawing.Image)(resources.GetObject("btnTemperatureMode.Image")));
             this.btnTemperatureMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTemperatureMode.Location = new System.Drawing.Point(4, 269);
-            this.btnTemperatureMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTemperatureMode.Margin = new System.Windows.Forms.Padding(4);
             this.btnTemperatureMode.Name = "btnTemperatureMode";
             this.btnTemperatureMode.Size = new System.Drawing.Size(273, 78);
             this.btnTemperatureMode.TabIndex = 1;
@@ -471,7 +471,7 @@
             this.btnLengthMode.Image = ((System.Drawing.Image)(resources.GetObject("btnLengthMode.Image")));
             this.btnLengthMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLengthMode.Location = new System.Drawing.Point(4, 355);
-            this.btnLengthMode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLengthMode.Margin = new System.Windows.Forms.Padding(4);
             this.btnLengthMode.Name = "btnLengthMode";
             this.btnLengthMode.Size = new System.Drawing.Size(273, 78);
             this.btnLengthMode.TabIndex = 19;
@@ -514,6 +514,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(501, 781);
             this.Name = "Temperature";
             this.Text = "Temperature";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Temperature_FormClosing);
