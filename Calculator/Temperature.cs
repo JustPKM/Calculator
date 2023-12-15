@@ -31,35 +31,13 @@ namespace Calculator
             }
             if (lblInput.Text == "")
                 lblInput.Text = "0";
-            if (cbbConvertUnits.Text == "Celsius")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Fahrenheit")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
+            Output();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             lblInput.Text = "0";
-            if (cbbConvertUnits.Text == "Celsius")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Fahrenheit")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
+            Output();
         }
 
         private void Length_Click(object sender, EventArgs e)
@@ -72,18 +50,7 @@ namespace Calculator
                     lblInput.Text = "";
                 }
                 lblInput.Text += btn.Text;
-                if (cbbConvertUnits.Text == "Celsius")
-                {
-                    lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-                }
-                else if (cbbConvertUnits.Text == "Fahrenheit")
-                {
-                    lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-                }
-                else
-                {
-                    lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-                }
+                Output();
             }
         }
 
@@ -134,34 +101,12 @@ namespace Calculator
 
         private void cbbConvertUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbConvertUnits.Text == "Celsius")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Fahrenheit")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
+            Output();
         }
 
         private void cbbConvertedUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbConvertUnits.Text == "Celsius")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Fahrenheit")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
+            Output();
         }
 
         private void siderbarTimer_Tick(object sender, EventArgs e)
@@ -185,7 +130,11 @@ namespace Calculator
                 }
             }
         }
-
+        private void Output()
+        {
+            string selectedUnit = cbbConvertUnits.Text;
+            lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), selectedUnit, cbbConvertedUnits.Text).ToString();
+        }
         private void btnMenu_Click(object sender, EventArgs e)
         {
             siderbarTimer.Start();
@@ -266,19 +215,10 @@ namespace Calculator
         {
             cbbConvertUnits.Text = "Celsius";
             cbbConvertedUnits.Text = "Fahrenheit";
-            if (cbbConvertUnits.Text == "Celsius")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Fahrenheit")
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else
-            {
-                lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
+
+            lblOutput.Text = ConvertTemperature(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
         }
+
 
         private void btnScientificMode_Click(object sender, EventArgs e)
         {

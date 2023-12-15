@@ -202,33 +202,8 @@ namespace Calculator
         }
         private void Output()
         {
-            if (cbbConvertUnits.Text == "Meters")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Kilometers")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Centimeters")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Milimeters")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if (cbbConvertUnits.Text == "Inches")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
-            else if(cbbConvertUnits.Text == "Miles")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            } else if(cbbConvertUnits.Text == "Feet")
-            {
-                lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), cbbConvertUnits.Text, cbbConvertedUnits.Text).ToString();
-            }
+            string selectedUnit = cbbConvertUnits.Text;
+            lblOutput.Text = ConvertDistance(double.Parse(lblInput.Text), selectedUnit, cbbConvertedUnits.Text).ToString();
         }
 
         private void Length_Load(object sender, EventArgs e)
