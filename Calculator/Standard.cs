@@ -23,7 +23,7 @@ namespace Calculator
         {
             InitializeComponent();
             this.KeyDown += Calculator_KeyDown;
-            this.Size = new Size(483, 634);
+            this.Size = MinimumSize;
 
         }
         private void ButtonNumber_Click(object sender, EventArgs e)
@@ -383,11 +383,11 @@ namespace Calculator
         {
             if(formExpand)
             {
-                this.Size = new Size(483, 634);
+                this.Size = MinimumSize;
             }
             else
             {
-                this.Size = new Size(703, 634);
+                this.Size = MaximumSize;
             }
             formExpand = !formExpand; //Thay đổi trạng thái của Form 
         }

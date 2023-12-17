@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,10 +17,11 @@ namespace Calculator
         {
             InitializeComponent();
             this.KeyDown += Scientific_KeyDown;
-            this.Size = new Size(529, 617);
+            this.Size = MinimumSize;
         }
 
         private bool sidebarExpand, hasResult = false, formExpand = false;
+        private bool AngleType = true, ModeType = true;
         private string oldOperation, operation = "";
         private double result = 0;
         private double value, preValue = 0;
@@ -232,59 +234,164 @@ namespace Calculator
             txtResult.Text = Convert.ToString(Math.Log10(double.Parse(txtResult.Text)));
             btnEqual.Focus();
         }
+        private void Trigonometry(string buttonText, Func<double, double> operation, Func<double, double> hyperbolicOperation, bool useDegrees)
+        {
+            txtShow.Text = $"{buttonText} {txtResult.Text} =";
+
+            double angle = double.Parse(txtResult.Text);
+
+            if (useDegrees)
+            {
+                angle *= Math.PI / 180;
+            }
+
+            double result;
+
+            if (ModeType) 
+            {
+                if (buttonText.Equals("sin"))
+                {
+                    result = operation(angle);
+                }
+                else if (buttonText.Equals("cos"))
+                {
+                    result = operation(angle);
+                }
+                else if (buttonText.Equals("tan"))
+                {
+                    result = operation(angle);
+                }
+                else if (buttonText.Equals("cot"))
+                {
+                    result = operation(angle);
+                }
+                else
+                {
+                    txtResult.Text = "Invalid button input";
+                    return;
+                }
+            }
+            else
+            {
+                if (buttonText.Equals("sinh")) {
+                    result = hyperbolicOperation(angle);
+                }
+                else if (buttonText.Equals("cosh")) {
+                    result = hyperbolicOperation(angle);
+                }
+                else if (buttonText.Equals("tanh")) {
+                    result = hyperbolicOperation(angle);
+                }
+                else if (buttonText.Equals("coth")) {
+                    result = hyperbolicOperation(angle);
+                }
+                else
+                {
+                    txtResult.Text = "Invalid button input";
+                    return;
+                }
+
+            }
+            txtResult.Text = result.ToString();
+            btnEqual.Focus();
+        }
+        private void Hyperbolic(string buttonText, Func<double, double> operation, Func<double, double> hyperbolicOperation, bool useDegrees)
+        {
+            txtShow.Text = $"{buttonText} {txtResult.Text} =";
+
+            double angle = double.Parse(txtResult.Text);
+            if (useDegrees)
+            {
+                if (buttonText.EndsWith("h"))
+                {
+                    if (Math.Abs(angle) > 1)
+                    {
+                        txtResult.Text = "Must be between -1 and 1";
+                        return;
+                    }
+                    txtResult.Text = Convert.ToString(hyperbolicOperation(angle) * (180 / Math.PI));
+                }
+                else
+                {
+                    txtResult.Text = Convert.ToString(operation(angle) * (180 / Math.PI));
+                }
+            }
+            else
+            {
+                if (buttonText.EndsWith("h"))
+                {
+                    if (Math.Abs(angle) > 1)
+                    {
+                        txtResult.Text = "Must be between -1 and 1";
+                        return;
+                    }
+                    txtResult.Text = Convert.ToString(hyperbolicOperation(angle));
+                }
+                else
+                {
+                    txtResult.Text = Convert.ToString(operation(angle));
+                }
+            }
+            btnEqual.Focus();
+        }
+        private void btnHyp_Click(object sender, EventArgs e)
+        {
+            ModeType = !ModeType;
+
+            btnHyp.Text = ModeType ? "hyp" : "tri";
+            btnSin.Text = ModeType ? "sin" : "sinh";
+            btnCos.Text = ModeType ? "cos" : "cosh";
+            btnTan.Text = ModeType ? "tan" : "tanh";
+            btnCotan.Text = ModeType ? "cot" : "coth";
+            btnASin.Text = ModeType ? "Asin" : "Asinh";
+            btnACos.Text = ModeType ? "Acos" : "Acosh";
+            btnATan.Text = ModeType ? "Atan" : "Atanh";
+            btnACot.Text = ModeType ? "Acot" : "Acoth";
+        }
+
+        private void btnRadDeg_Click(object sender, EventArgs e)
+        {
+            AngleType = !AngleType;
+            btnRadDeg.Text = AngleType ? "deg" : "rad";
+
+        }
         private void btnSin_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnSin.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Sin(double.Parse(txtResult.Text) * (Math.PI / 180)));
-            btnEqual.Focus();
+            Trigonometry(btnSin.Text,Math.Sin,Math.Sinh, AngleType);
         }
         private void btnCos_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnCos.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Cos(double.Parse(txtResult.Text) * (Math.PI / 180)));
-            btnEqual.Focus();
+            Trigonometry(btnCos.Text,Math.Cos,Math.Cosh,AngleType);
         }
 
         private void btnTan_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnTan.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Tan(double.Parse(txtResult.Text) * (Math.PI / 180)));
-            btnEqual.Focus();
+            Trigonometry(btnTan.Text,Math.Tan,Math.Tanh,AngleType);
         }
 
         private void btnCotan_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnCotan.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(1 / Math.Tan(double.Parse(txtResult.Text) * (Math.PI / 180)));
-            btnEqual.Focus();
+            Trigonometry(btnCotan.Text, angle => 1 / Math.Tan(angle), angle => 1 / Math.Tanh(angle), AngleType);
         }
-        private void btnSinh_Click(object sender, EventArgs e)
+        private void btnASin_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnSinh.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Sinh(double.Parse(txtResult.Text)));
-            btnEqual.Focus();
+            Hyperbolic(btnASin.Text, Math.Asin, angle => Math.Log(angle + Math.Sqrt(angle * angle + 1)), AngleType);
+        }
+        private void btnACos_Click(object sender, EventArgs e)
+        {
+            Hyperbolic(btnACos.Text, Math.Acos, angle => Math.Log(angle + Math.Sqrt(angle * angle - 1)), AngleType);
         }
 
-        private void btnCosh_Click(object sender, EventArgs e)
+        private void btnATan_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnCosh.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Cosh(double.Parse(txtResult.Text)));
-            btnEqual.Focus();
+            Hyperbolic(btnATan.Text, Math.Atan, angle => 0.5 * Math.Log((1 + angle) / (1 - angle)), AngleType);
         }
 
-        private void btnTanh_Click(object sender, EventArgs e)
+        private void btnACot_Click(object sender, EventArgs e)
         {
-            txtShow.Text = btnTanh.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(Math.Tanh(double.Parse(txtResult.Text)));
-            btnEqual.Focus();
+            Hyperbolic(btnACot.Text, angle => Math.Atan(1 / angle), angle => 0.5 * Math.Log((angle + 1) / (angle - 1)), AngleType);
         }
 
-        private void btnCoth_Click(object sender, EventArgs e)
-        {
-            txtShow.Text = btnCoth.Text + " " + txtResult.Text + " =";
-            txtResult.Text = Convert.ToString(1 / Math.Tanh(double.Parse(txtResult.Text)));
-            btnEqual.Focus();
-        }
         private void btnEXP_Click(object sender, EventArgs e)
         {
             txtShow.Text = btnEXP.Text + " " + txtResult.Text + " =";
@@ -304,7 +411,6 @@ namespace Calculator
                 lblType.Show();
             }
         }
-
         private void Scientific_Load(object sender, EventArgs e)
         {
             this.ActiveControl = btnEqual;
@@ -319,16 +425,15 @@ namespace Calculator
             txtShow.Text = show + "=";
             txtResult.Text = res;
         }
-
         private void btnHistory_Click(object sender, EventArgs e)
         {
             if (formExpand)
             {
-                this.Size = new Size(529, 617);
+                this.Size = MinimumSize;
             }
             else
             {
-                this.Size = new Size(733, 617);
+                this.Size = MaximumSize;
             }
             formExpand = !formExpand;
         }
@@ -485,6 +590,10 @@ namespace Calculator
             lstHistory.Items.Add(txtShow.Text + " " + txtResult.Text);
             lblStatus.Text = "";
             btnEqual.Focus();
+        }
+        private void HandlingResultMode(object sender, EventArgs e)
+        {
+            
         }
     }
 }

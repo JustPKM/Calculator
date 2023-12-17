@@ -644,7 +644,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(687, 595);
+            this.ClientSize = new System.Drawing.Size(470, 595);
             this.Controls.Add(this.lstHistory);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.label2);
@@ -681,6 +681,7 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(703, 634);
+            this.MinimumSize = new System.Drawing.Size(486, 634);
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calculator_FormClosing);
